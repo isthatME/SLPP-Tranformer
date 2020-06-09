@@ -24,7 +24,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/fontawesome.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/regular.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/solid.css"
             ],
             "scripts": []
           },
@@ -119,6 +122,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "SLPP"
+    }
+  },
+  "defaultProject": "SLPP",
+  "cli": {
+    "analytics": "1869d2c9-84a9-47c4-bff3-de93aad6b103"
+  }
 }

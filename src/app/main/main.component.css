@@ -1,0 +1,52 @@
+/* main layer */
+.containerr {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+}
+.form{
+    background-color: rgb(233, 231, 231);
+    width: auto;
+    height: auto;
+    overflow-x: hidden scroll;  
+    padding: 6px;
+}
+
+/* header content */
+.header-content > p {
+    font-size: 30px;
+}
+.line{
+    border: solid 0.5px black;    
+}
+
+
+/* form */
+tr > th{
+    padding: 15px;
+    width: 30px;
+}
+.form-data {
+    display: flex;
+}
+select {
+    border: none;
+    background-color: transparent;
+}
+td > input {
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    background-color: transparent;
+    display: flex;
+    width: 20px;
+}
+
+/* incons */
+.fa-plus, .fa-times {
+ color: #c2c2c2;
+ cursor: pointer;
+}
+.fa-plus:hover, .fa-times:hover {
+    color: #818181;
+}
