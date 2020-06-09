@@ -8,27 +8,38 @@ import { FormBuilder, FormGroup} from '@angular/forms';
 })
 export class MainComponent implements OnInit {
   form: FormBuilder;
-  numberOfColum: number = 1;
-  numberOfLine: number = 1;
+  numberOfColums: number = 1;
+  numberOfLines: number = 3;
+  colums: any;
+  lines: any;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.createTableaux()
   }
 
   onSubmit(form){
     
   }
+  createTableaux(){
+    this.colums = Array(this.numberOfColums)
+    this.colums = this.colums.fill().map((x,i)=> i == 0 ? 1 : i + 1);
+    this.lines = Array(this.numberOfLines)
+    this.lines = this.lines.fill().map((x,i)=> i == 0 ? 1 : i + 1);
+  }
   addColum(){
-    this.numberOfColum++
+    this.numberOfColums++
+    this.createTableaux()
   }
   removeColum(){
-    this.numberOfColum--
+    this.numberOfColums--
+    this.createTableaux()
   }
   addLine(){
-    this.numberOfLine++
+    this.numberOfLines++
   }
   removeLine(){
-    this.numberOfLine--
+    this.numberOfLines--
   }
 }

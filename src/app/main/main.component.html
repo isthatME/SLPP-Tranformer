@@ -9,10 +9,10 @@
         <table>
           <tr class="add-and-remove">
             <th></th>
-            <th><i class="fa fa-times" aria-hidden="true"></i></th>
-            <th><i class="fa fa-plus"></i></th>
+            <th><i class="fa fa-times" aria-hidden="true" (click)="removeColum()"></i></th>
+            <th><i class="fa fa-plus" (click)="addColum()"></i></th>
           </tr>
-          <tr class="form-data">
+          <tr class="form-of">
             <td>
               <div class="select-wrapper">
                 <select>
@@ -21,11 +21,34 @@
                 </select>
               </div>
             </td>
-            <td >
-              <input type="text">
-              <p>X{{ numberOfColum }}</p>
+            <td class="variable-input" *ngFor="let num of colums">
+              <input type="text" placeholder="?">
+              <p>X{{ num }}</p>
+              <i class="fa fa-plus" *ngIf="numberOfColums  > 1"></i>    
             </td>
             <td></td>
+          </tr>
+          <tr class="form-st" *ngFor="let numLines of lines; first as isFirst">
+            <td>
+              <p *ngIf="isFirst">Sujeito à:</p>
+            </td>
+            <td *ngFor="let num of colums">
+              <input type="text" placeholder="?">
+              <p>X{{ num }}</p>
+              <i class="fa fa-plus" *ngIf="numberOfColums  > 1"></i>              
+            </td>          
+          </tr>
+          <tr>
+            <td></td>
+            <td>1
+              <div>
+                <select>
+                  1<option value="maximizar">=0</option>
+                  <option value="minimizar"><=0</option>
+                  <option value="minimizar">livre</option>
+                </select>
+              </div>
+            </td>
           </tr>
         </table>
       </form>
