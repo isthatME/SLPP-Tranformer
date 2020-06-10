@@ -12,7 +12,6 @@ import { CommonModule } from '@angular/common';
     AppComponent
   ],
   imports: [
-    FormsModule,
     CommonModule,
     ReactiveFormsModule,
     BrowserModule,

@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup} from '@angular/forms';
 export class MainComponent implements OnInit {
   form: FormBuilder;
   numberOfColums: number = 1;
-  numberOfLines: number = 3;
+  numberOfLines: number = 1;
   colums: any;
   lines: any;
 

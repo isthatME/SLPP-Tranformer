@@ -5,7 +5,7 @@
       <div class="line"></div>
     </div>
     <div class="form-content">
-      <form>
+      <form [formGroup]="form">
         <table>
           <tr class="add-and-remove">
             <th></th>
@@ -24,7 +24,7 @@
             <td class="variable-input" *ngFor="let num of colums">
               <input type="text" placeholder="?">
               <p>X{{ num }}</p>
-              <i class="fa fa-plus" *ngIf="numberOfColums  > 1"></i>    
+              <i class="fa fa-plus" *ngIf="numberOfColums > 1"></i>
             </td>
             <td></td>
           </tr>
@@ -35,15 +35,15 @@
             <td *ngFor="let num of colums">
               <input type="text" placeholder="?">
               <p>X{{ num }}</p>
-              <i class="fa fa-plus" *ngIf="numberOfColums  > 1"></i>              
-            </td>          
+              <i class="fa fa-plus" *ngIf="numberOfColums  > 1"></i>
+            </td>
           </tr>
           <tr>
             <td></td>
-            <td>1
+            <td *ngFor="let num of colums">
               <div>
                 <select>
-                  1<option value="maximizar">=0</option>
+                  <option value="maximizar">=0</option>
                   <option value="minimizar"><=0</option>
                   <option value="minimizar">livre</option>
                 </select>
