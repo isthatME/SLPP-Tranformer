@@ -1,4 +1,4 @@
-<div class="containerr">
+<div class="container">
   <div class="form">
     <div class="header-content">
       <p>Infome os dados</p>
@@ -22,20 +22,39 @@
               </div>
             </td>
             <td class="variable-input" *ngFor="let num of colums">
-              <input type="text" placeholder="?">
-              <p>X{{ num }}</p>
-              <i class="fa fa-plus" *ngIf="numberOfColums > 1"></i>
+              <div class="colums">
+                <input type="text" placeholder="?">
+                <p>X{{ num }}</p>
+                <i class="fa fa-plus" *ngIf="numberOfColums > 1"></i>
+              </div>
             </td>
             <td></td>
           </tr>
-          <tr class="form-st" *ngFor="let numLines of lines; first as isFirst">
+          <tr class="form-st" *ngFor="let numLines of lines; first as isFirst; last as isLast">
             <td>
               <p *ngIf="isFirst">Sujeito à:</p>
             </td>
             <td *ngFor="let num of colums">
-              <input type="text" placeholder="?">
-              <p>X{{ num }}</p>
-              <i class="fa fa-plus" *ngIf="numberOfColums  > 1"></i>
+              <div class="colums">
+                <input type="text" placeholder="?">
+                <p>X{{ num }}</p>
+                <i class="fa fa-plus" *ngIf="numberOfColums  > 1"></i>
+              </div>
+            </td>
+            <td>
+              <select>
+                <option value="equals0"> ==0 </option>
+                <option value="greater0"> >=0 </option>
+                <option value="less0"> <= </option>
+              </select>
+            </td>
+            <td>
+              <div class="colums">
+                <input type="text" placeholder="?">
+              </div>
+            </td>
+            <td>
+              <i class="fa fa-times" (click)="removeLine()"></i>
             </td>
           </tr>
           <tr>
@@ -43,11 +62,16 @@
             <td *ngFor="let num of colums">
               <div>
                 <select>
-                  <option value="maximizar">=0</option>
-                  <option value="minimizar"><=0</option>
-                  <option value="minimizar">livre</option>
+                  <option value="maximizar"> >=0 </option>
+                  <option value="minimizar"> <=0 </option>
+                  <option value="minimizar"> livre </option>
                 </select>
               </div>
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+              <i class="fa fa-plus" (click)="addLine()"></i>
             </td>
           </tr>
         </table>

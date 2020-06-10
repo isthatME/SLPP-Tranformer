@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup} from '@angular/forms';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  form: FormBuilder;
+  form: FormGroup;
   numberOfColums: number = 1;
   numberOfLines: number = 1;
   colums: any;
@@ -17,6 +17,10 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     this.createTableaux()
+
+    this.form = this.fb.group({
+
+    })
   }
 
   onSubmit(form){
@@ -33,13 +37,18 @@ export class MainComponent implements OnInit {
     this.createTableaux()
   }
   removeColum(){
-    this.numberOfColums--
+    if(this.numberOfColums > 1){
+      this.numberOfColums--
+      this.createTableaux()
+    }
     this.createTableaux()
   }
   addLine(){
     this.numberOfLines++
+    this.createTableaux()
   }
   removeLine(){
     this.numberOfLines--
+    this.createTableaux()
   }
 }
