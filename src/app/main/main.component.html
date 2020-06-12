@@ -23,20 +23,20 @@
             </td>
             <td class="variable-input" *ngFor="let num of colums">
               <div class="colums">
-                <input type="text" placeholder="?">
+                <input type="text" placeholder="?" formControlName="functionVar">
                 <p>X{{ num }}</p>
                 <i class="fa fa-plus" *ngIf="numberOfColums > 1"></i>
               </div>
             </td>
             <td></td>
           </tr>
-          <tr class="form-st" *ngFor="let numLines of lines; first as isFirst; last as isLast">
+          <tr class="form-st" *ngFor="let numLines of lines; first as isFirst">
             <td>
               <p *ngIf="isFirst">Sujeito à:</p>
             </td>
             <td *ngFor="let num of colums">
               <div class="colums">
-                <input type="text" placeholder="?">
+                <input type="text" placeholder="?" formControlName="decisionsVar">
                 <p>X{{ num }}</p>
                 <i class="fa fa-plus" *ngIf="numberOfColums  > 1"></i>
               </div>
@@ -50,7 +50,7 @@
             </td>
             <td>
               <div class="colums">
-                <input type="text" placeholder="?">
+                <input type="text" placeholder="?" formControlName="restrictionsVar">
               </div>
             </td>
             <td>
@@ -76,6 +76,10 @@
           </tr>
         </table>
       </form>
+    </div>
+    <hr>
+    <div class="transformBtn">
+      <button type="submit" (click)="onSubmit(form)">Salvar</button>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-main',
@@ -19,12 +19,14 @@ export class MainComponent implements OnInit {
     this.createTableaux()
 
     this.form = this.fb.group({
-
+      functionVar: ['', Validators.required],
+      decisionsVar: ['', Validators.required],
+      restrictionsVar: ['', Validators.required]
     })
   }
 
   onSubmit(form){
-    
+    console.log(form)
   }
   createTableaux(){
     this.colums = Array(this.numberOfColums)
@@ -48,7 +50,10 @@ export class MainComponent implements OnInit {
     this.createTableaux()
   }
   removeLine(){
-    this.numberOfLines--
+    if(!(this.numberOfLines <= 1)){
+      this.numberOfLines--
+      this.createTableaux()   
+    }
     this.createTableaux()
   }
 }

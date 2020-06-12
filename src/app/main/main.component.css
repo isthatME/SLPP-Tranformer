@@ -52,6 +52,9 @@ tr > th, tr > td{
     display: flex;
     justify-content: space-around;
 }
+select {
+    cursor: pointer;
+}
 p{
     margin: 0;
     padding: 0
