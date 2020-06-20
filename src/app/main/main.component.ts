@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-main',
@@ -12,6 +12,7 @@ export class MainComponent implements OnInit {
   numberOfLines: number = 1;
   colums: any;
   lines: any;
+  arr:any
 
   constructor(private fb: FormBuilder) { }
 
@@ -23,10 +24,12 @@ export class MainComponent implements OnInit {
       decisionsVar: ['', Validators.required],
       restrictionsVar: ['', Validators.required]
     })
-  }
 
+  }
+  
+ 
   onSubmit(form){
-    console.log(form)
+    console.log(form.value)
   }
   createTableaux(){
     this.colums = Array(this.numberOfColums)
